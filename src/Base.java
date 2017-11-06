@@ -3,6 +3,29 @@
 import java.sql.*;
 
 public class Base {
+
+    public static void main(String[] args) throws Exception {
+        template();
+    }
+
+    static void template() throws Exception {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM user");
+
+            while (rs.next()) {
+                System.out.println(rs.getObject(1) + "\t" + rs.getObject(2) + "\t" +
+                        rs.getObject(3) + "\t" + rs.getObject(4));
+            }
+        } finally {
+            JdbcUtils.free(rs, st, conn);
+        }
+    }
+
     static void test() throws SQLException {
         // 注册驱动
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
