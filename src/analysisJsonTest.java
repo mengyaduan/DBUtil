@@ -5,21 +5,26 @@
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import jdk.nashorn.api.scripting.JSObject;
+
+import java.util.Objects;
 
 public class analysisJsonTest {
 
     public static void main(String[] args) {
         JSONObject jo = getJson();
+        int a = jo.getJSONArray("classes").size();
+        String b = jo.getJSONArray("classes").getJSONObject(0).getJSONArray("cases1").getJSONObject(0).getString("api");
+        System.out.println(a);
+        System.out.println(b);
     }
 
-    public static JSONObject getJson(){
+    public static JSONObject getJson() {
         String text = "{\n" +
                 "        \"classes\": [\n" +
                 "            {\n" +
-                "                \"cases\": [\n" +
+                "                \"cases1\": [\n" +
                 "                    {\n" +
-                "                        \"api\": \"\",\n" +
+                "                        \"api\": \"fucku\",\n" +
                 "                        \"desc\": \"µ±end¸ñÊ½ÎÞÐ§\",\n" +
                 "                        \"enableStatus\": true,\n" +
                 "                        \"groups\": \"\",\n" +
@@ -33,7 +38,7 @@ public class analysisJsonTest {
                 "                \"total\": 13\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"cases\": [\n" +
+                "                \"cases2\": [\n" +
                 "                    {\n" +
                 "                        \"api\": \"\",\n" +
                 "                        \"desc\": \"Tid=null\",\n" +
@@ -42,78 +47,6 @@ public class analysisJsonTest {
                 "                        \"name\": \"testAdd_TidNull\",\n" +
                 "                        \"owner\": \"\"\n" +
                 "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"Î´µÇÂ¼ÓÃ»§\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_Notlogin\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"Tid=''\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_TidEmpty\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"µÇÂ¼ÓÃ»§\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"²¢·¢Ïß³ÌÇ©µ½£¬Ö»ÄÜÇ©µ½Ò»´Î²Å¶Ô\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_Parallel\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"µÇÂ¼ÓÃ»§,ÐÂ°æÇ©µ½½Ó¿ÚÔö¼Ó·µ»Ø½ð±ÒºÍ¾\u00ADÑé×Ö¶Î\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_new\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"µÇÂ¼ÓÃ»§,µÇÂ¼³É¹¦ºóÖ»ÄÜÁìÈ¡Ò»´Î½ð±Ò£¬Ö»ÓÐÒ»´ÎÀúÊ·¼ÇÂ¼\",\n" +
-                "                        \"enableStatus\": false,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_Record\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"ÓÃ»§ÒÑÁ¬ÐøÇ©µ½½±Àø´ïµ½×î´óÌìÊýºó£¬Ç©µ½ÌìÊý¼ÆÊý´Ó0¿ªÊ¼\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_MaxRecord\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"ÓÃ»§ÒÑ¾\u00ADÇ©µ½¹ý\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_AlreadySigned\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    },\n" +
-                "                    {\n" +
-                "                        \"api\": \"\",\n" +
-                "                        \"desc\": \"²¢·¢Ïß³ÌÇ©µ½£¬Ö»ÄÜÇ©µ½Ò»´Î²Å¶Ô\",\n" +
-                "                        \"enableStatus\": true,\n" +
-                "                        \"groups\": \"\",\n" +
-                "                        \"name\": \"testAdd_ParallelResult\",\n" +
-                "                        \"owner\": \"\"\n" +
-                "                    }\n" +
                 "                ],\n" +
                 "                \"desc\": \"\",\n" +
                 "                \"enabledCases\": [],\n" +
@@ -128,7 +61,6 @@ public class analysisJsonTest {
         JSONObject jo = JSON.parseObject(text);
         return jo;
     }
-
 
 
 }
