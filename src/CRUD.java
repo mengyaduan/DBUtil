@@ -9,10 +9,10 @@ import java.sql.Statement;
 public class CRUD {
 
     public static void main(String[] args) throws SQLException {
-        read();
+//        read();
 //        create();
 //        update();
-        delete();
+//        delete();
         read();
     }
 
@@ -24,6 +24,22 @@ public class CRUD {
             conn = JdbcUtils.getConnection();
             st = conn.createStatement();
             String sql = "insert into user(name,birthday,money) values ('name1','1987-01-01','400')";
+            int i = st.executeUpdate(sql);
+            System.out.println("i = " + i);
+        } finally {
+            JdbcUtils.free(rs, st, conn);
+        }
+    }
+
+    static void create(String casename, String totalcase) throws SQLException {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = "insert into user(name,birthday,money) values " +
+                    "('"+ casename +"','1987-01-01','"+totalcase+"')";
             int i = st.executeUpdate(sql);
             System.out.println("i = " + i);
         } finally {

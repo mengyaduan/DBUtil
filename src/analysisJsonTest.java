@@ -4,8 +4,10 @@
  */
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.io.*;
 import java.util.Objects;
 
 public class analysisJsonTest {
@@ -57,12 +59,9 @@ public class analysisJsonTest {
                 "        \"name\": \"com.autonavi.test.framework.aos.autosns.checkin\",\n" +
                 "        \"total\": 23\n" +
                 "    }";
-
         JSONObject jo = JSON.parseObject(text);
         return jo;
     }
-
-
 }
 
 

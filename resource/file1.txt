@@ -1,0 +1,108 @@
+[
+    {
+        "classes": [
+            {
+                "cases": [
+                    {
+                        "api": "",
+                        "desc": "",
+                        "enableStatus": true,
+                        "groups": "",
+                        "name": "test",
+                        "owner": ""
+                    },
+                    {
+                        "api": "",
+                        "desc": "连续签到天数，和用户等级",
+                        "enableStatus": true,
+                        "groups": "",
+                        "name": "testLianxuSign",
+                        "owner": ""
+                    }
+                ],
+                "desc": "",
+                "enabledCases": [],
+                "name": "com.autonavi.test.framework.aos.autosns.checkin.RecordTest",
+                "total": 13
+            },
+            {
+                "cases": [
+                    {
+                        "api": "",
+                        "desc": "Tid=null",
+                        "enableStatus": true,
+                        "groups": "",
+                        "name": "testAdd_TidNull",
+                        "owner": ""
+                    }
+                ],
+                "desc": "",
+                "enabledCases": [],
+                "name": "com.autonavi.test.framework.aos.autosns.checkin.AddTest",
+                "total": 10
+            }
+        ],
+        "name": "com.autonavi.test.framework.aos.autosns.checkin",
+        "total": 23
+    },
+    {
+        "classes": [
+            {
+                "cases": [
+                    {
+                        "api": "",
+                        "desc": "测试点：透传接口正常调用",
+                        "enableStatus": true,
+                        "groups": "",
+                        "name": "testNormal_allParam",
+                        "owner": ""
+                    }
+                ],
+                "desc": "",
+                "enabledCases": [],
+                "name": "com.autonavi.test.framework.aos.oss.transfer.OnlineTransferPathLbpTest",
+                "total": 3
+            },
+            {
+                "cases": [
+                    {
+                        "api": "",
+                        "desc": "测试点：透传接口正常调用",
+                        "enableStatus": true,
+                        "groups": "",
+                        "name": "testNormal_allParam",
+                        "owner": ""
+                    }
+                ],
+                "desc": "",
+                "enabledCases": [],
+                "name": "com.autonavi.test.framework.aos.oss.transfer.TransferPathLbp_FVTTest",
+                "total": 3
+            }
+        ],
+        "name": "com.autonavi.test.framework.aos.oss.transfer",
+        "total": 12
+    },
+    {
+        "classes": [
+            {
+                "cases": [
+                    {
+                        "api": "",
+                        "desc": "",
+                        "enableStatus": true,
+                        "groups": "",
+                        "name": "testAllBVT",
+                        "owner": ""
+                    }
+                ],
+                "desc": "",
+                "enabledCases": [],
+                "name": "com.autonavi.test.framework.aos.qingqiu.XianShangLinShiTest",
+                "total": 1
+            }
+        ],
+        "name": "com.autonavi.test.framework.aos.qingqiu",
+        "total": 1
+    }
+]
